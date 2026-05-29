@@ -141,7 +141,9 @@ POST /api/appointments
 
 ## What I Learned
 
-Building this project gave me hands-on understanding of how Spring's IoC container manages dependencies — rather than manually creating service and repository objects, Spring injects them automatically through `@Autowired`, which keeps each layer loosely coupled and independently testable. The trickiest part was preventing double bookings — I solved this by adding a conflict check in the service layer using a custom Spring Data query (`existsByDoctorAndSlotDateTime`) before persisting, and learned how application-level validation works alongside database constraints. I also introduced a DTO for the appointment booking endpoint to avoid exposing unnecessary nested object fields in the API contract, which taught me the importance of separating internal data models from what the API surface actually needs.
+Building this project gave me hands-on understanding of how Spring's IoC container manages dependencies, rather than manually creating service and repository objects, Spring injects them automatically through `@Autowired`, which keeps each layer loosely coupled and independently testable.
+The tricky part was preventing double bookings. I solved this by adding a conflict check in the service layer using a custom Spring Data query (`existsByDoctorAndSlotDateTime`) before persisting.
+I also introduced a DTO for the appointment booking endpoint to avoid exposing unnecessary nested object fields in the API contract, which taught me the importance of separating internal data models from what the API surface actually needs.
 
 ---
 
