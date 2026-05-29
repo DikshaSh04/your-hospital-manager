@@ -24,7 +24,7 @@ public class DoctorController {
         return doctorService.getDoctors();
     }
 
-    @Operation(summary = "Add a new doctor", description = "Creates a new doctor record with availability hours.")
+    @Operation(summary = "Add a new doctor", description = "Creates a new doctor record with specialization and availability hours.")
     @PostMapping
     public Doctor addDoctor(@RequestBody Doctor doctor){
         return doctorService.addDoctor(doctor);

@@ -24,7 +24,7 @@ public class PatientController {
         return patientService.getAllPatients();
     }
 
-    @Operation(summary = "Retrieve patient by ID", description = "Fetches a single patient record by their unique ID. Returns 404 if not found.")
+    @Operation(summary = "Retrieve patient by ID", description = "Fetches a single patient record by their unique ID.")
     @GetMapping("/{id}")
     public Patient getPatient(@PathVariable Long id){
         return patientService.getPatientById(id);
